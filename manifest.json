@@ -1,0 +1,9 @@
+{
+  "name": "the matt files",
+  "short_name": "themattfiles",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color:": "#121212",
+  "theme_color": "#FF838B"
+}
