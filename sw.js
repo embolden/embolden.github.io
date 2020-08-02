@@ -17,12 +17,12 @@ var app = [
 ];
 
 self.addEventListener('install', (event) => {
-  console.log('Installed.');
+  // console.log('Installed.');
 
   event.waitUntil(
     caches.open(CACHE)
     .then((cache) => {
-      console.log('Cache all.');
+      // console.log('Cache all.');
       return cache.addAll(app);
     })
   );
@@ -30,20 +30,20 @@ self.addEventListener('install', (event) => {
 
 
 self.addEventListener('activate', () => {
-  console.log('Activated.');
+  // console.log('Activated.');
 });
 
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((req) => {
-      console.log('Fetching: ', event.request.url);
+      // console.log('Fetching: ', event.request.url);
 
       return req ||
         fetch(event.request)
         .then((res) => {
           return caches.open(CACHE)
                 .then((cache) => {
-                  console.log('Caching: ', event.request.url);
+                  // console.log('Caching: ', event.request.url);
                   cache.put(event.request, res.clone());
                   return res;
                 });
