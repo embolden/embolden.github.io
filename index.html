@@ -6,7 +6,7 @@
     <meta name="description" content="the matt files (dot) com is the personal website of matt keehner. it shows a picture of penpen, his penguin tattoo.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script>
+    <!-- <script>
       document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.no-js').classList.remove('no-js');
       });
@@ -21,10 +21,18 @@
         document.querySelector('html').classList.add('font-loaded');
       }
     </script>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap" as="style" id="js-css" onload="fontLoaded();">
-    <noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap" as="style" id="js-css" onload="fontLoaded();"> -->
+
+    <!-- <noscript> -->
       <link rel="stylesheet" id="css" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap">
-    </noscript>
+
+      <style>
+        .no-js {
+          font-family: 'Grenze Gotisch', Times New Roman, serif;
+          font-size-adjust: none;
+        }
+      </style>
+    <!-- </noscript> -->
 
     <style>
       html {
@@ -35,7 +43,6 @@
         font-size-adjust: 0.377;
       }
 
-      .no-js,
       .font-loaded {
         font-family: 'Grenze Gotisch', Times New Roman, serif;
         font-size-adjust: none;
@@ -58,14 +65,17 @@
 
       #site {
         display: grid;
-        place-items: center;
         grid-template-rows: minmax(0, 1fr);
+        justify-content: center;
         overflow: hidden;
+        place-items: center;
       }
 
       #penpen {
+        height: auto;
         max-height: 100%;
         max-width: 100%;
+        width: auto;
       }
 
       #title {
@@ -97,7 +107,7 @@
 
   <body>
     <main id="site">
-      <object id="penpen" type="image/svg+xml" data="assets/img/penpen.svg">penpen</object>
+      <object id="penpen" width="612" height="792" type="image/svg+xml" data="assets/img/penpen.svg">penpen</object>
       <h1 id="title">the matt files</h1>
     </main>
 
