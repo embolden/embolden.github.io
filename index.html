@@ -6,7 +6,16 @@
     <meta name="description" content="the matt files (dot) com is the personal website of matt keehner. it shows a picture of penpen, his penguin tattoo.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <script>
+      function fontLoaded() {
+        var css = document.querySelector('#css');
+        css.onload = null;
+        css.rel = 'stylesheet';
+
+        document.querySelector('html').classList.add('font-loaded');
+      }
+    </script>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap" as="style" id="css" onload="fontLoaded();">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap"></noscript>
 
     <style>
@@ -14,6 +23,13 @@
         -webkit-text-size-adjust: 100%;
         background-color: #121212;
         line-height: 1.15;
+        font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+        font-size: 0.75rem;
+      }
+
+      .font-loaded {
+        font-family: 'Grenze Gotisch', Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+        font-size: 1rem;
       }
 
       body {
@@ -43,7 +59,6 @@
 
       #title {
         color: #fff;
-        font-family: 'Grenze Gotisch', sans-serif;
         font-size: clamp(2em, (15vw + 1em), 20em);
         margin: 0.25em 0.25em 0.5em;
         max-width: 100%;
