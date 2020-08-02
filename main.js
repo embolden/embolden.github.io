@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.matchMedia('(prefers-color-scheme: dark)')
   .addEventListener('change', e => {
-    doc.setAttribute('dark', e.matches);
+    localStorage.setItem('use-dark-color-scheme', e.matches);
+    doc.setAttribute('dark', localStorage.getItem('use-dark-color-scheme'));
   });
 
   var penpenObject = document.getElementById('penpen');
