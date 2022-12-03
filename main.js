@@ -27,19 +27,15 @@ document.addEventListener('DOMContentLoaded', function() {
     doc.setAttribute('dark', localStorage.getItem('use-dark-color-scheme'));
   });
 
-  var penpenObject = document.getElementById('penpen');
-  penpenObject.addEventListener('load', () => {
-    var penpen = penpenObject.contentDocument;
-    var gem = penpen.getElementById('gem');
+  var gem = document.getElementById('gem');
 
-    gem.addEventListener('click', () => {
-      if (doc.getAttribute('dark') === 'true') {
-        localStorage.setItem('use-dark-color-scheme', 'false');
-      } else {
-        localStorage.setItem('use-dark-color-scheme', 'true');
-      }
+  gem.addEventListener('click', () => {
+    if (doc.getAttribute('dark') === 'true') {
+      localStorage.setItem('use-dark-color-scheme', 'false');
+    } else {
+      localStorage.setItem('use-dark-color-scheme', 'true');
+    }
 
-      doc.setAttribute('dark', localStorage.getItem('use-dark-color-scheme')) ;
-    }, false);
+    doc.setAttribute('dark', localStorage.getItem('use-dark-color-scheme')) ;
   }, false);
 });
